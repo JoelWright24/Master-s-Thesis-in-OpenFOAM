@@ -1,0 +1,2747 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      fvOptions;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+/*
+source0
+{
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+        type            DarcyForchheimer;
+	selectionMode   cellZone;
+//    	cellZone        cz_solid_*;
+    	cellZone        cz_solid_0;
+        DarcyForchheimerCoeffs
+        {
+            d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+            f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+            {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+
+}
+*/
+source0 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_0;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source1 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_1;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source2 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_2;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source3 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_3;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source4 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_4;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source5 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_5;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source6 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_6;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source7 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_7;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source8 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_8;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source9 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_9;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source10 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_10;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source11 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_11;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source12 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_12;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source13 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_13;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source14 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_14;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source15 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_15;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source16 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_16;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source17 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_17;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source18 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_18;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source19 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_19;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source20 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_20;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source21 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_21;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source22 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_22;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source23 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_23;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source24 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_24;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source25 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_25;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source26 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_26;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source27 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_27;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source28 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_28;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source29 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_29;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source30 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_30;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source31 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_31;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source32 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_32;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source33 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_33;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source34 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_34;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source35 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_35;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source36 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_36;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source37 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_37;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source38 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_38;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source39 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_39;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source40 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_40;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source41 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_41;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source42 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_42;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source43 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_43;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source44 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_44;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source45 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_45;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source46 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_46;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source47 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_47;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source48 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_48;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source49 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_49;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source50 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_50;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source51 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_51;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source52 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_52;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source53 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_53;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source54 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_54;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source55 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_55;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source56 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_56;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source57 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_57;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source58 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_58;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source59 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_59;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source60 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_60;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source61 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_61;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source62 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_62;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source63 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_63;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source64 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_64;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source65 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_65;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source66 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_66;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source67 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_67;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source68 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_68;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source69 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_69;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source70 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_70;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source71 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_71;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source72 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_72;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source73 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_73;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source74 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_74;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source75 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_75;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source76 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_76;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source77 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_77;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source78 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_78;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source79 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_79;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source80 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_80;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source81 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_81;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source82 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_82;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source83 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_83;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source84 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_84;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source85 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_85;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source86 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_86;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source87 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_87;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source88 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_88;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source89 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_89;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source90 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_90;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source91 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_91;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source92 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_92;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source93 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_93;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source94 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_94;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source95 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_95;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source96 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_96;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source97 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_97;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source98 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_98;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+source99 
+{ 
+    type	explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+	type            DarcyForchheimer;
+	selectionMode   cellZone;
+	cellZone        cz_solid_99;
+	DarcyForchheimerCoeffs
+	{
+	    d   d [0 -2 0 0 0 0 0] (3e12 0 3e12);
+	    f   f [0 -1 0 0 0 0 0] (4e5 0 4e5);
+            coordinateSystem
+	    {
+                type    cartesian;
+                origin  (0 0 0);
+                coordinateRotation
+                {
+                    type    axesRotation;
+                    e1  (1 0 0);
+                    e2  (0 1 0);
+                }
+            }
+        }
+    }
+}
+
+// ************************************************************************* //

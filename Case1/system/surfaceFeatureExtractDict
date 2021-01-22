@@ -1,0 +1,1031 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  dev                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeatureExtractDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+chamber.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes; // no;
+}
+
+filter_0.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_1.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_2.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_3.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_4.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_5.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_6.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_7.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_8.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_9.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_10.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_11.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_12.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_13.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_14.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_15.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_16.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_17.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_18.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_19.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_20.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_21.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_22.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_23.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_24.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_25.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_26.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_27.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_28.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_29.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_30.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_31.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_32.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_33.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_34.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_35.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_36.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_37.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_38.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_39.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_40.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_41.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_42.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_43.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_44.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_45.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_46.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_47.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_48.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_49.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_50.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_51.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_52.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_53.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_54.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_55.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_56.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_57.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_58.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_59.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_60.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_61.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_62.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_63.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_64.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_65.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_66.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_67.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_68.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_69.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_70.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_71.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_72.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_73.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_74.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_75.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_76.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_77.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_78.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_79.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_80.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_81.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_82.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_83.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_84.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_85.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_86.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_87.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_88.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_89.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_90.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_91.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_92.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_93.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_94.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_95.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_96.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_97.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_98.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+filter_99.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+    includedAngle   120;
+    }
+    baffles (porosityFaces);
+    writeObj        yes;
+}
+
+
+
+// ************************************************************************* //

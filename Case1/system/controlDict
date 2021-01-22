@@ -1,0 +1,3717 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.4                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "";
+    case            "";
+    instance        "";
+    local           "";
+
+    class           dictionary;
+    object          controlDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application simpleFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         3000; // 1 
+
+deltaT          1; // just two work out parallel I changed from 100 to 20 
+
+writeControl    timeStep;
+
+writeInterval   100; // 1250
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression uncompressed;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
+
+functions
+{
+    porousforces
+    {
+        type forces;
+        functionObjectLibs ("libforces.so");
+        writeControl timeStep;
+        writeInterval     20;
+
+        // Patches to sample
+        patches (solid_to_fluid);
+        // Name of fields
+        //pName p;
+       // Uname U;
+        // Density
+        //rhoName rho;
+//        nuName    nuInf;
+	rho	rhoInf;
+	p	p;
+	U	U;
+
+	rhoInf	10000;
+//        nuInf 1e-06;
+        // Dump to file
+        log true;
+        // Centre of rotation
+        CofR (0 0 0);
+        // Include porosity effects
+        porosity   true;
+	
+	#include "fvOptions"
+
+	
+    }
+/*
+    volFieldValue1
+    {
+	// Mandatory entries (unmodifiable)
+	type            volFieldValue;
+	libs            ("libfieldFunctionObjects.so");
+	enabled         true;
+	fields
+	(
+	    U
+	);
+	operation       volIntegrate;
+	surfaceFormat	vtk;
+	// Mandatory entries (runtime modifiable)
+        writeControl    timeStep;
+        writeInterval   2;
+	writeFields     true; 
+	regionType      cellZone;
+	name		cz_solid_1;
+	
+    }
+*/
+
+   volFieldValue_0
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_0;
+   }
+   massFlowAtFilter_0
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_0;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_1
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_1;
+   }
+   massFlowAtFilter_1
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_1;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_2
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_2;
+   }
+   massFlowAtFilter_2
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_2;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_3
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_3;
+   }
+   massFlowAtFilter_3
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_3;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_4
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_4;
+   }
+   massFlowAtFilter_4
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_4;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_5
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_5;
+   }
+   massFlowAtFilter_5
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_5;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_6
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_6;
+   }
+   massFlowAtFilter_6
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_6;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_7
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_7;
+   }
+   massFlowAtFilter_7
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_7;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_8
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_8;
+   }
+   massFlowAtFilter_8
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_8;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_9
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_9;
+   }
+   massFlowAtFilter_9
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_9;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_10
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_10;
+   }
+   massFlowAtFilter_10
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_10;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_11
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_11;
+   }
+   massFlowAtFilter_11
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_11;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_12
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_12;
+   }
+   massFlowAtFilter_12
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_12;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_13
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_13;
+   }
+   massFlowAtFilter_13
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_13;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_14
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_14;
+   }
+   massFlowAtFilter_14
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_14;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_15
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_15;
+   }
+   massFlowAtFilter_15
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_15;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_16
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_16;
+   }
+   massFlowAtFilter_16
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_16;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_17
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_17;
+   }
+   massFlowAtFilter_17
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_17;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_18
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_18;
+   }
+   massFlowAtFilter_18
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_18;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_19
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_19;
+   }
+   massFlowAtFilter_19
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_19;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_20
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_20;
+   }
+   massFlowAtFilter_20
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_20;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_21
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_21;
+   }
+   massFlowAtFilter_21
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_21;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_22
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_22;
+   }
+   massFlowAtFilter_22
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_22;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_23
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_23;
+   }
+   massFlowAtFilter_23
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_23;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_24
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_24;
+   }
+   massFlowAtFilter_24
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_24;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_25
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_25;
+   }
+   massFlowAtFilter_25
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_25;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_26
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_26;
+   }
+   massFlowAtFilter_26
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_26;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_27
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_27;
+   }
+   massFlowAtFilter_27
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_27;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_28
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_28;
+   }
+   massFlowAtFilter_28
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_28;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_29
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_29;
+   }
+   massFlowAtFilter_29
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_29;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_30
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_30;
+   }
+   massFlowAtFilter_30
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_30;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_31
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_31;
+   }
+   massFlowAtFilter_31
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_31;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_32
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_32;
+   }
+   massFlowAtFilter_32
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_32;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_33
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_33;
+   }
+   massFlowAtFilter_33
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_33;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_34
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_34;
+   }
+   massFlowAtFilter_34
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_34;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_35
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_35;
+   }
+   massFlowAtFilter_35
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_35;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_36
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_36;
+   }
+   massFlowAtFilter_36
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_36;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_37
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_37;
+   }
+   massFlowAtFilter_37
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_37;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_38
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_38;
+   }
+   massFlowAtFilter_38
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_38;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_39
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_39;
+   }
+   massFlowAtFilter_39
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_39;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_40
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_40;
+   }
+   massFlowAtFilter_40
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_40;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_41
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_41;
+   }
+   massFlowAtFilter_41
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_41;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_42
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_42;
+   }
+   massFlowAtFilter_42
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_42;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_43
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_43;
+   }
+   massFlowAtFilter_43
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_43;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_44
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_44;
+   }
+   massFlowAtFilter_44
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_44;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_45
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_45;
+   }
+   massFlowAtFilter_45
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_45;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_46
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_46;
+   }
+   massFlowAtFilter_46
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_46;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_47
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_47;
+   }
+   massFlowAtFilter_47
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_47;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_48
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_48;
+   }
+   massFlowAtFilter_48
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_48;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_49
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_49;
+   }
+   massFlowAtFilter_49
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_49;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_50
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_50;
+   }
+   massFlowAtFilter_50
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_50;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_51
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_51;
+   }
+   massFlowAtFilter_51
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_51;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_52
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_52;
+   }
+   massFlowAtFilter_52
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_52;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_53
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_53;
+   }
+   massFlowAtFilter_53
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_53;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_54
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_54;
+   }
+   massFlowAtFilter_54
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_54;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_55
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_55;
+   }
+   massFlowAtFilter_55
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_55;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_56
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_56;
+   }
+   massFlowAtFilter_56
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_56;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_57
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_57;
+   }
+   massFlowAtFilter_57
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_57;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_58
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_58;
+   }
+   massFlowAtFilter_58
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_58;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_59
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_59;
+   }
+   massFlowAtFilter_59
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_59;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_60
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_60;
+   }
+   massFlowAtFilter_60
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_60;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_61
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_61;
+   }
+   massFlowAtFilter_61
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_61;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_62
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_62;
+   }
+   massFlowAtFilter_62
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_62;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_63
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_63;
+   }
+   massFlowAtFilter_63
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_63;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_64
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_64;
+   }
+   massFlowAtFilter_64
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_64;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_65
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_65;
+   }
+   massFlowAtFilter_65
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_65;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_66
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_66;
+   }
+   massFlowAtFilter_66
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_66;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_67
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_67;
+   }
+   massFlowAtFilter_67
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_67;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_68
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_68;
+   }
+   massFlowAtFilter_68
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_68;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_69
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_69;
+   }
+   massFlowAtFilter_69
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_69;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_70
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_70;
+   }
+   massFlowAtFilter_70
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_70;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_71
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_71;
+   }
+   massFlowAtFilter_71
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_71;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_72
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_72;
+   }
+   massFlowAtFilter_72
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_72;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_73
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_73;
+   }
+   massFlowAtFilter_73
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_73;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_74
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_74;
+   }
+   massFlowAtFilter_74
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_74;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_75
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_75;
+   }
+   massFlowAtFilter_75
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_75;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_76
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_76;
+   }
+   massFlowAtFilter_76
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_76;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_77
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_77;
+   }
+   massFlowAtFilter_77
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_77;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_78
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_78;
+   }
+   massFlowAtFilter_78
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_78;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_79
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_79;
+   }
+   massFlowAtFilter_79
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_79;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_80
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_80;
+   }
+   massFlowAtFilter_80
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_80;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_81
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_81;
+   }
+   massFlowAtFilter_81
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_81;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_82
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_82;
+   }
+   massFlowAtFilter_82
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_82;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_83
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_83;
+   }
+   massFlowAtFilter_83
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_83;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_84
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_84;
+   }
+   massFlowAtFilter_84
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_84;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_85
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_85;
+   }
+   massFlowAtFilter_85
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_85;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_86
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_86;
+   }
+   massFlowAtFilter_86
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_86;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_87
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_87;
+   }
+   massFlowAtFilter_87
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_87;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_88
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_88;
+   }
+   massFlowAtFilter_88
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_88;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_89
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_89;
+   }
+   massFlowAtFilter_89
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_89;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_90
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_90;
+   }
+   massFlowAtFilter_90
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_90;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_91
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_91;
+   }
+   massFlowAtFilter_91
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_91;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_92
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_92;
+   }
+   massFlowAtFilter_92
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_92;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_93
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_93;
+   }
+   massFlowAtFilter_93
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_93;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_94
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_94;
+   }
+   massFlowAtFilter_94
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_94;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_95
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_95;
+   }
+   massFlowAtFilter_95
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_95;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_96
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_96;
+   }
+   massFlowAtFilter_96
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_96;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_97
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_97;
+   }
+   massFlowAtFilter_97
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_97;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_98
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_98;
+   }
+   massFlowAtFilter_98
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_98;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+   volFieldValue_99
+   {
+        type            volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+        fields
+        (
+            U
+        );
+        operation       volIntegrate;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      cellZone;
+        name            cz_solid_99;
+   }
+   massFlowAtFilter_99
+   {
+        type            surfaceFieldValue;
+        functionObjectLibs ("libfieldFunctionObjects.so");
+        enabled         true;
+        surfaceFormat   null;
+        writeControl    timeStep;
+        writeInterval   20;
+        log             true;
+        writeFields     true;
+        regionType      faceZone;
+        name            fz_solid_99;
+        operation       sum;
+        fields
+        (
+            phi
+        );
+   }
+
+}
+   
+
+
+// ************************************************************************* //

@@ -1,0 +1,28 @@
+x=($(python3 Filter_Position_x.py | tr -d '[],'))
+z=($(python3 Filter_Position_y.py | tr -d '[],'))
+
+#echo ${x[*]}
+#echo "${x[1]}"
+#j=1
+# echo "${j[@]}"
+# a=${x[$j]}
+# b=${z[$j]}
+# echo $a # echo $b
+#echo "${x[$j]}"
+# surfaceTransformPoints -translate "( $((a)) $((b)) 0 )" filter.stl filter_single.stl
+
+layer=(0.02 0.315 0.61 0.905 1.2)
+
+
+# echo "${x[$j]}"
+# echo "${z[$j]}"
+raise=0.02
+counter=0
+for i in "${!layer[@]}"
+do
+for j in "${!x[@]}"
+do
+surfaceTransformPoints -translate "( ${x[$j]} ${layer[$i]} ${z[$j]} )" filter.stl filter_$counter.stl
+counter=$((counter+1))
+done
+done

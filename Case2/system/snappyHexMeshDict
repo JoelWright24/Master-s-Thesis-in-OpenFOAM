@@ -1,0 +1,2439 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Which of the steps to run
+castellatedMesh true;
+snap            true;
+addLayers       false;
+
+
+// Geometry. Definition of all surfaces. All surfaces are of class
+// searchableSurface.
+// Surfaces are used
+// - to specify refinement for any mesh cell intersecting it
+// - to specify refinement for any mesh cell inside/outside/near
+// - to 'snap' the mesh boundary to the surface
+geometry
+{
+    chamber
+    {
+        type triSurfaceMesh;
+        file "chamber.stl";
+    }
+
+    filter_0 
+    { 
+        type triSurfaceMesh;
+        file "filter_0.stl"; 
+    } 
+    filter_1 
+    { 
+        type triSurfaceMesh;
+        file "filter_1.stl"; 
+    } 
+    filter_2 
+    { 
+        type triSurfaceMesh;
+        file "filter_2.stl"; 
+    } 
+    filter_3 
+    { 
+        type triSurfaceMesh;
+        file "filter_3.stl"; 
+    } 
+    filter_4 
+    { 
+        type triSurfaceMesh;
+        file "filter_4.stl"; 
+    } 
+    filter_5 
+    { 
+        type triSurfaceMesh;
+        file "filter_5.stl"; 
+    } 
+    filter_6 
+    { 
+        type triSurfaceMesh;
+        file "filter_6.stl"; 
+    } 
+    filter_7 
+    { 
+        type triSurfaceMesh;
+        file "filter_7.stl"; 
+    } 
+    filter_8 
+    { 
+        type triSurfaceMesh;
+        file "filter_8.stl"; 
+    } 
+    filter_9 
+    { 
+        type triSurfaceMesh;
+        file "filter_9.stl"; 
+    } 
+    filter_10 
+    { 
+        type triSurfaceMesh;
+        file "filter_10.stl"; 
+    } 
+    filter_11 
+    { 
+        type triSurfaceMesh;
+        file "filter_11.stl"; 
+    } 
+    filter_12 
+    { 
+        type triSurfaceMesh;
+        file "filter_12.stl"; 
+    } 
+    filter_13 
+    { 
+        type triSurfaceMesh;
+        file "filter_13.stl"; 
+    } 
+    filter_14 
+    { 
+        type triSurfaceMesh;
+        file "filter_14.stl"; 
+    } 
+    filter_15 
+    { 
+        type triSurfaceMesh;
+        file "filter_15.stl"; 
+    } 
+    filter_16 
+    { 
+        type triSurfaceMesh;
+        file "filter_16.stl"; 
+    } 
+    filter_17 
+    { 
+        type triSurfaceMesh;
+        file "filter_17.stl"; 
+    } 
+    filter_18 
+    { 
+        type triSurfaceMesh;
+        file "filter_18.stl"; 
+    } 
+    filter_19 
+    { 
+        type triSurfaceMesh;
+        file "filter_19.stl"; 
+    } 
+    filter_20 
+    { 
+        type triSurfaceMesh;
+        file "filter_20.stl"; 
+    } 
+    filter_21 
+    { 
+        type triSurfaceMesh;
+        file "filter_21.stl"; 
+    } 
+    filter_22 
+    { 
+        type triSurfaceMesh;
+        file "filter_22.stl"; 
+    } 
+    filter_23 
+    { 
+        type triSurfaceMesh;
+        file "filter_23.stl"; 
+    } 
+    filter_24 
+    { 
+        type triSurfaceMesh;
+        file "filter_24.stl"; 
+    } 
+    filter_25 
+    { 
+        type triSurfaceMesh;
+        file "filter_25.stl"; 
+    } 
+    filter_26 
+    { 
+        type triSurfaceMesh;
+        file "filter_26.stl"; 
+    } 
+    filter_27 
+    { 
+        type triSurfaceMesh;
+        file "filter_27.stl"; 
+    } 
+    filter_28 
+    { 
+        type triSurfaceMesh;
+        file "filter_28.stl"; 
+    } 
+    filter_29 
+    { 
+        type triSurfaceMesh;
+        file "filter_29.stl"; 
+    } 
+    filter_30 
+    { 
+        type triSurfaceMesh;
+        file "filter_30.stl"; 
+    } 
+    filter_31 
+    { 
+        type triSurfaceMesh;
+        file "filter_31.stl"; 
+    } 
+    filter_32 
+    { 
+        type triSurfaceMesh;
+        file "filter_32.stl"; 
+    } 
+    filter_33 
+    { 
+        type triSurfaceMesh;
+        file "filter_33.stl"; 
+    } 
+    filter_34 
+    { 
+        type triSurfaceMesh;
+        file "filter_34.stl"; 
+    } 
+    filter_35 
+    { 
+        type triSurfaceMesh;
+        file "filter_35.stl"; 
+    } 
+    filter_36 
+    { 
+        type triSurfaceMesh;
+        file "filter_36.stl"; 
+    } 
+    filter_37 
+    { 
+        type triSurfaceMesh;
+        file "filter_37.stl"; 
+    } 
+    filter_38 
+    { 
+        type triSurfaceMesh;
+        file "filter_38.stl"; 
+    } 
+    filter_39 
+    { 
+        type triSurfaceMesh;
+        file "filter_39.stl"; 
+    } 
+    filter_40 
+    { 
+        type triSurfaceMesh;
+        file "filter_40.stl"; 
+    } 
+    filter_41 
+    { 
+        type triSurfaceMesh;
+        file "filter_41.stl"; 
+    } 
+    filter_42 
+    { 
+        type triSurfaceMesh;
+        file "filter_42.stl"; 
+    } 
+    filter_43 
+    { 
+        type triSurfaceMesh;
+        file "filter_43.stl"; 
+    } 
+    filter_44 
+    { 
+        type triSurfaceMesh;
+        file "filter_44.stl"; 
+    } 
+    filter_45 
+    { 
+        type triSurfaceMesh;
+        file "filter_45.stl"; 
+    } 
+    filter_46 
+    { 
+        type triSurfaceMesh;
+        file "filter_46.stl"; 
+    } 
+    filter_47 
+    { 
+        type triSurfaceMesh;
+        file "filter_47.stl"; 
+    } 
+    filter_48 
+    { 
+        type triSurfaceMesh;
+        file "filter_48.stl"; 
+    } 
+    filter_49 
+    { 
+        type triSurfaceMesh;
+        file "filter_49.stl"; 
+    } 
+    filter_50 
+    { 
+        type triSurfaceMesh;
+        file "filter_50.stl"; 
+    } 
+    filter_51 
+    { 
+        type triSurfaceMesh;
+        file "filter_51.stl"; 
+    } 
+    filter_52 
+    { 
+        type triSurfaceMesh;
+        file "filter_52.stl"; 
+    } 
+    filter_53 
+    { 
+        type triSurfaceMesh;
+        file "filter_53.stl"; 
+    } 
+    filter_54 
+    { 
+        type triSurfaceMesh;
+        file "filter_54.stl"; 
+    } 
+    filter_55 
+    { 
+        type triSurfaceMesh;
+        file "filter_55.stl"; 
+    } 
+    filter_56 
+    { 
+        type triSurfaceMesh;
+        file "filter_56.stl"; 
+    } 
+    filter_57 
+    { 
+        type triSurfaceMesh;
+        file "filter_57.stl"; 
+    } 
+    filter_58 
+    { 
+        type triSurfaceMesh;
+        file "filter_58.stl"; 
+    } 
+    filter_59 
+    { 
+        type triSurfaceMesh;
+        file "filter_59.stl"; 
+    } 
+    filter_60 
+    { 
+        type triSurfaceMesh;
+        file "filter_60.stl"; 
+    } 
+    filter_61 
+    { 
+        type triSurfaceMesh;
+        file "filter_61.stl"; 
+    } 
+    filter_62 
+    { 
+        type triSurfaceMesh;
+        file "filter_62.stl"; 
+    } 
+    filter_63 
+    { 
+        type triSurfaceMesh;
+        file "filter_63.stl"; 
+    } 
+    filter_64 
+    { 
+        type triSurfaceMesh;
+        file "filter_64.stl"; 
+    } 
+    filter_65 
+    { 
+        type triSurfaceMesh;
+        file "filter_65.stl"; 
+    } 
+    filter_66 
+    { 
+        type triSurfaceMesh;
+        file "filter_66.stl"; 
+    } 
+    filter_67 
+    { 
+        type triSurfaceMesh;
+        file "filter_67.stl"; 
+    } 
+    filter_68 
+    { 
+        type triSurfaceMesh;
+        file "filter_68.stl"; 
+    } 
+    filter_69 
+    { 
+        type triSurfaceMesh;
+        file "filter_69.stl"; 
+    } 
+    filter_70 
+    { 
+        type triSurfaceMesh;
+        file "filter_70.stl"; 
+    } 
+    filter_71 
+    { 
+        type triSurfaceMesh;
+        file "filter_71.stl"; 
+    } 
+    filter_72 
+    { 
+        type triSurfaceMesh;
+        file "filter_72.stl"; 
+    } 
+    filter_73 
+    { 
+        type triSurfaceMesh;
+        file "filter_73.stl"; 
+    } 
+    filter_74 
+    { 
+        type triSurfaceMesh;
+        file "filter_74.stl"; 
+    } 
+    filter_75 
+    { 
+        type triSurfaceMesh;
+        file "filter_75.stl"; 
+    } 
+    filter_76 
+    { 
+        type triSurfaceMesh;
+        file "filter_76.stl"; 
+    } 
+    filter_77 
+    { 
+        type triSurfaceMesh;
+        file "filter_77.stl"; 
+    } 
+    filter_78 
+    { 
+        type triSurfaceMesh;
+        file "filter_78.stl"; 
+    } 
+    filter_79 
+    { 
+        type triSurfaceMesh;
+        file "filter_79.stl"; 
+    } 
+    filter_80 
+    { 
+        type triSurfaceMesh;
+        file "filter_80.stl"; 
+    } 
+    filter_81 
+    { 
+        type triSurfaceMesh;
+        file "filter_81.stl"; 
+    } 
+    filter_82 
+    { 
+        type triSurfaceMesh;
+        file "filter_82.stl"; 
+    } 
+    filter_83 
+    { 
+        type triSurfaceMesh;
+        file "filter_83.stl"; 
+    } 
+    filter_84 
+    { 
+        type triSurfaceMesh;
+        file "filter_84.stl"; 
+    } 
+    filter_85 
+    { 
+        type triSurfaceMesh;
+        file "filter_85.stl"; 
+    } 
+    filter_86 
+    { 
+        type triSurfaceMesh;
+        file "filter_86.stl"; 
+    } 
+    filter_87 
+    { 
+        type triSurfaceMesh;
+        file "filter_87.stl"; 
+    } 
+    filter_88 
+    { 
+        type triSurfaceMesh;
+        file "filter_88.stl"; 
+    } 
+    filter_89 
+    { 
+        type triSurfaceMesh;
+        file "filter_89.stl"; 
+    } 
+    filter_90 
+    { 
+        type triSurfaceMesh;
+        file "filter_90.stl"; 
+    } 
+    filter_91 
+    { 
+        type triSurfaceMesh;
+        file "filter_91.stl"; 
+    } 
+    filter_92 
+    { 
+        type triSurfaceMesh;
+        file "filter_92.stl"; 
+    } 
+    filter_93 
+    { 
+        type triSurfaceMesh;
+        file "filter_93.stl"; 
+    } 
+    filter_94 
+    { 
+        type triSurfaceMesh;
+        file "filter_94.stl"; 
+    } 
+    filter_95 
+    { 
+        type triSurfaceMesh;
+        file "filter_95.stl"; 
+    } 
+    filter_96 
+    { 
+        type triSurfaceMesh;
+        file "filter_96.stl"; 
+    } 
+    filter_97 
+    { 
+        type triSurfaceMesh;
+        file "filter_97.stl"; 
+    } 
+    filter_98 
+    { 
+        type triSurfaceMesh;
+        file "filter_98.stl"; 
+    } 
+    filter_99 
+    { 
+        type triSurfaceMesh;
+        file "filter_99.stl"; 
+    } 
+
+    //- Refine a bit extra around the small centre hole
+    refinementBox  // User defined region name
+    {
+        type   searchableBox;       // region defined by bounding box
+        min    (0 1 0.75);
+        max    (0.12 1.5 1.4);
+    }
+
+    refinementCylinder
+    {
+	type	searchableCylinder;
+	point1	(0.6 0.1 0.6);
+	point2	(0.6 1.4 0.6);
+	radius	0.25;
+    }
+    
+};
+
+
+
+// Settings for the castellatedMesh generation.
+castellatedMeshControls
+{
+
+    // Refinement parameters
+    // ~~~~~~~~~~~~~~~~~~~~~
+
+    // If local number of cells is >= maxLocalCells on any processor
+    // switches from from refinement followed by balancing
+    // (current method) to (weighted) balancing before refinement.
+    maxLocalCells 5000000;
+
+    // Overall cell limit (approximately). Refinement will stop immediately
+    // upon reaching this number so a refinement level might not complete.
+    // Note that this is the number of cells before removing the part which
+    // is not 'visible' from the keepPoint. The final number of cells might
+    // actually be a lot less.
+    maxGlobalCells 10000000;
+
+    // The surface refinement loop might spend lots of iterations refining just a
+    // few cells. This setting will cause refinement to stop if <= minimumRefine
+    // are selected for refinement. Note: it will at least do one iteration
+    // (unless the number of cells to refine is 0)
+    minRefinementCells 0;
+
+    // Number of buffer layers between different levels.
+    // 1 means normal 2:1 refinement restriction, larger means slower
+    // refinement.
+    nCellsBetweenLevels 1;
+
+
+
+    // Explicit feature edge refinement
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    // Specifies a level for any cell intersected by its edges.
+    // This is a featureEdgeMesh, read from constant/triSurface for now.
+    features
+    (
+
+        { 
+            file "filter_0.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_1.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_2.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_3.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_4.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_5.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_6.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_7.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_8.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_9.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_10.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_11.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_12.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_13.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_14.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_15.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_16.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_17.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_18.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_19.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_20.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_21.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_22.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_23.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_24.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_25.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_26.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_27.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_28.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_29.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_30.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_31.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_32.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_33.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_34.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_35.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_36.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_37.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_38.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_39.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_40.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_41.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_42.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_43.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_44.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_45.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_46.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_47.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_48.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_49.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_50.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_51.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_52.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_53.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_54.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_55.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_56.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_57.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_58.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_59.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_60.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_61.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_62.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_63.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_64.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_65.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_66.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_67.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_68.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_69.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_70.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_71.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_72.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_73.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_74.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_75.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_76.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_77.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_78.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_79.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_80.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_81.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_82.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_83.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_84.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_85.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_86.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_87.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_88.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_89.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_90.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_91.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_92.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_93.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_94.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_95.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_96.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_97.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_98.extendedFeatureEdgeMesh";
+            level 3;
+        }
+        { 
+            file "filter_99.extendedFeatureEdgeMesh";
+            level 3;
+        }
+
+	{
+            file "chamber.extendedFeatureEdgeMesh";
+            level 3;
+        }
+    );
+
+
+    // Surface based refinement
+    // ~~~~~~~~~~~~~~~~~~~~~~~~
+
+    // Specifies two levels for every surface. The first is the minimum level,
+    // every cell intersecting a surface gets refined up to the minimum level.
+    // The second level is the maximum level. Cells that 'see' multiple
+    // intersections where the intersections make an
+    // angle > resolveFeatureAngle get refined up to the maximum level.
+
+    refinementSurfaces
+    {
+        chamber
+        {
+            // Surface-wise min and max refinement level
+            level (0 3);
+        }
+
+	filter_0
+	{
+	    level (2 3);
+	    cellZone cz_solid_0;
+	    faceZone fz_solid_0;
+	    cellZoneInside inside;
+	}
+	filter_1
+	{
+	    level (2 3);
+	    cellZone cz_solid_1;
+	    faceZone fz_solid_1;
+	    cellZoneInside inside;
+	}
+	filter_2
+	{
+	    level (2 3);
+	    cellZone cz_solid_2;
+	    faceZone fz_solid_2;
+	    cellZoneInside inside;
+	}
+	filter_3
+	{
+	    level (2 3);
+	    cellZone cz_solid_3;
+	    faceZone fz_solid_3;
+	    cellZoneInside inside;
+	}
+	filter_4
+	{
+	    level (2 3);
+	    cellZone cz_solid_4;
+	    faceZone fz_solid_4;
+	    cellZoneInside inside;
+	}
+	filter_5
+	{
+	    level (2 3);
+	    cellZone cz_solid_5;
+	    faceZone fz_solid_5;
+	    cellZoneInside inside;
+	}
+	filter_6
+	{
+	    level (2 3);
+	    cellZone cz_solid_6;
+	    faceZone fz_solid_6;
+	    cellZoneInside inside;
+	}
+	filter_7
+	{
+	    level (2 3);
+	    cellZone cz_solid_7;
+	    faceZone fz_solid_7;
+	    cellZoneInside inside;
+	}
+	filter_8
+	{
+	    level (2 3);
+	    cellZone cz_solid_8;
+	    faceZone fz_solid_8;
+	    cellZoneInside inside;
+	}
+	filter_9
+	{
+	    level (2 3);
+	    cellZone cz_solid_9;
+	    faceZone fz_solid_9;
+	    cellZoneInside inside;
+	}
+	filter_10
+	{
+	    level (2 3);
+	    cellZone cz_solid_10;
+	    faceZone fz_solid_10;
+	    cellZoneInside inside;
+	}
+	filter_11
+	{
+	    level (2 3);
+	    cellZone cz_solid_11;
+	    faceZone fz_solid_11;
+	    cellZoneInside inside;
+	}
+	filter_12
+	{
+	    level (2 3);
+	    cellZone cz_solid_12;
+	    faceZone fz_solid_12;
+	    cellZoneInside inside;
+	}
+	filter_13
+	{
+	    level (2 3);
+	    cellZone cz_solid_13;
+	    faceZone fz_solid_13;
+	    cellZoneInside inside;
+	}
+	filter_14
+	{
+	    level (2 3);
+	    cellZone cz_solid_14;
+	    faceZone fz_solid_14;
+	    cellZoneInside inside;
+	}
+	filter_15
+	{
+	    level (2 3);
+	    cellZone cz_solid_15;
+	    faceZone fz_solid_15;
+	    cellZoneInside inside;
+	}
+	filter_16
+	{
+	    level (2 3);
+	    cellZone cz_solid_16;
+	    faceZone fz_solid_16;
+	    cellZoneInside inside;
+	}
+	filter_17
+	{
+	    level (2 3);
+	    cellZone cz_solid_17;
+	    faceZone fz_solid_17;
+	    cellZoneInside inside;
+	}
+	filter_18
+	{
+	    level (2 3);
+	    cellZone cz_solid_18;
+	    faceZone fz_solid_18;
+	    cellZoneInside inside;
+	}
+	filter_19
+	{
+	    level (2 3);
+	    cellZone cz_solid_19;
+	    faceZone fz_solid_19;
+	    cellZoneInside inside;
+	}
+	filter_20
+	{
+	    level (2 3);
+	    cellZone cz_solid_20;
+	    faceZone fz_solid_20;
+	    cellZoneInside inside;
+	}
+	filter_21
+	{
+	    level (2 3);
+	    cellZone cz_solid_21;
+	    faceZone fz_solid_21;
+	    cellZoneInside inside;
+	}
+	filter_22
+	{
+	    level (2 3);
+	    cellZone cz_solid_22;
+	    faceZone fz_solid_22;
+	    cellZoneInside inside;
+	}
+	filter_23
+	{
+	    level (2 3);
+	    cellZone cz_solid_23;
+	    faceZone fz_solid_23;
+	    cellZoneInside inside;
+	}
+	filter_24
+	{
+	    level (2 3);
+	    cellZone cz_solid_24;
+	    faceZone fz_solid_24;
+	    cellZoneInside inside;
+	}
+	filter_25
+	{
+	    level (2 3);
+	    cellZone cz_solid_25;
+	    faceZone fz_solid_25;
+	    cellZoneInside inside;
+	}
+	filter_26
+	{
+	    level (2 3);
+	    cellZone cz_solid_26;
+	    faceZone fz_solid_26;
+	    cellZoneInside inside;
+	}
+	filter_27
+	{
+	    level (2 3);
+	    cellZone cz_solid_27;
+	    faceZone fz_solid_27;
+	    cellZoneInside inside;
+	}
+	filter_28
+	{
+	    level (2 3);
+	    cellZone cz_solid_28;
+	    faceZone fz_solid_28;
+	    cellZoneInside inside;
+	}
+	filter_29
+	{
+	    level (2 3);
+	    cellZone cz_solid_29;
+	    faceZone fz_solid_29;
+	    cellZoneInside inside;
+	}
+	filter_30
+	{
+	    level (2 3);
+	    cellZone cz_solid_30;
+	    faceZone fz_solid_30;
+	    cellZoneInside inside;
+	}
+	filter_31
+	{
+	    level (2 3);
+	    cellZone cz_solid_31;
+	    faceZone fz_solid_31;
+	    cellZoneInside inside;
+	}
+	filter_32
+	{
+	    level (2 3);
+	    cellZone cz_solid_32;
+	    faceZone fz_solid_32;
+	    cellZoneInside inside;
+	}
+	filter_33
+	{
+	    level (2 3);
+	    cellZone cz_solid_33;
+	    faceZone fz_solid_33;
+	    cellZoneInside inside;
+	}
+	filter_34
+	{
+	    level (2 3);
+	    cellZone cz_solid_34;
+	    faceZone fz_solid_34;
+	    cellZoneInside inside;
+	}
+	filter_35
+	{
+	    level (2 3);
+	    cellZone cz_solid_35;
+	    faceZone fz_solid_35;
+	    cellZoneInside inside;
+	}
+	filter_36
+	{
+	    level (2 3);
+	    cellZone cz_solid_36;
+	    faceZone fz_solid_36;
+	    cellZoneInside inside;
+	}
+	filter_37
+	{
+	    level (2 3);
+	    cellZone cz_solid_37;
+	    faceZone fz_solid_37;
+	    cellZoneInside inside;
+	}
+	filter_38
+	{
+	    level (2 3);
+	    cellZone cz_solid_38;
+	    faceZone fz_solid_38;
+	    cellZoneInside inside;
+	}
+	filter_39
+	{
+	    level (2 3);
+	    cellZone cz_solid_39;
+	    faceZone fz_solid_39;
+	    cellZoneInside inside;
+	}
+	filter_40
+	{
+	    level (2 3);
+	    cellZone cz_solid_40;
+	    faceZone fz_solid_40;
+	    cellZoneInside inside;
+	}
+	filter_41
+	{
+	    level (2 3);
+	    cellZone cz_solid_41;
+	    faceZone fz_solid_41;
+	    cellZoneInside inside;
+	}
+	filter_42
+	{
+	    level (2 3);
+	    cellZone cz_solid_42;
+	    faceZone fz_solid_42;
+	    cellZoneInside inside;
+	}
+	filter_43
+	{
+	    level (2 3);
+	    cellZone cz_solid_43;
+	    faceZone fz_solid_43;
+	    cellZoneInside inside;
+	}
+	filter_44
+	{
+	    level (2 3);
+	    cellZone cz_solid_44;
+	    faceZone fz_solid_44;
+	    cellZoneInside inside;
+	}
+	filter_45
+	{
+	    level (2 3);
+	    cellZone cz_solid_45;
+	    faceZone fz_solid_45;
+	    cellZoneInside inside;
+	}
+	filter_46
+	{
+	    level (2 3);
+	    cellZone cz_solid_46;
+	    faceZone fz_solid_46;
+	    cellZoneInside inside;
+	}
+	filter_47
+	{
+	    level (2 3);
+	    cellZone cz_solid_47;
+	    faceZone fz_solid_47;
+	    cellZoneInside inside;
+	}
+	filter_48
+	{
+	    level (2 3);
+	    cellZone cz_solid_48;
+	    faceZone fz_solid_48;
+	    cellZoneInside inside;
+	}
+	filter_49
+	{
+	    level (2 3);
+	    cellZone cz_solid_49;
+	    faceZone fz_solid_49;
+	    cellZoneInside inside;
+	}
+	filter_50
+	{
+	    level (2 3);
+	    cellZone cz_solid_50;
+	    faceZone fz_solid_50;
+	    cellZoneInside inside;
+	}
+	filter_51
+	{
+	    level (2 3);
+	    cellZone cz_solid_51;
+	    faceZone fz_solid_51;
+	    cellZoneInside inside;
+	}
+	filter_52
+	{
+	    level (2 3);
+	    cellZone cz_solid_52;
+	    faceZone fz_solid_52;
+	    cellZoneInside inside;
+	}
+	filter_53
+	{
+	    level (2 3);
+	    cellZone cz_solid_53;
+	    faceZone fz_solid_53;
+	    cellZoneInside inside;
+	}
+	filter_54
+	{
+	    level (2 3);
+	    cellZone cz_solid_54;
+	    faceZone fz_solid_54;
+	    cellZoneInside inside;
+	}
+	filter_55
+	{
+	    level (2 3);
+	    cellZone cz_solid_55;
+	    faceZone fz_solid_55;
+	    cellZoneInside inside;
+	}
+	filter_56
+	{
+	    level (2 3);
+	    cellZone cz_solid_56;
+	    faceZone fz_solid_56;
+	    cellZoneInside inside;
+	}
+	filter_57
+	{
+	    level (2 3);
+	    cellZone cz_solid_57;
+	    faceZone fz_solid_57;
+	    cellZoneInside inside;
+	}
+	filter_58
+	{
+	    level (2 3);
+	    cellZone cz_solid_58;
+	    faceZone fz_solid_58;
+	    cellZoneInside inside;
+	}
+	filter_59
+	{
+	    level (2 3);
+	    cellZone cz_solid_59;
+	    faceZone fz_solid_59;
+	    cellZoneInside inside;
+	}
+	filter_60
+	{
+	    level (2 3);
+	    cellZone cz_solid_60;
+	    faceZone fz_solid_60;
+	    cellZoneInside inside;
+	}
+	filter_61
+	{
+	    level (2 3);
+	    cellZone cz_solid_61;
+	    faceZone fz_solid_61;
+	    cellZoneInside inside;
+	}
+	filter_62
+	{
+	    level (2 3);
+	    cellZone cz_solid_62;
+	    faceZone fz_solid_62;
+	    cellZoneInside inside;
+	}
+	filter_63
+	{
+	    level (2 3);
+	    cellZone cz_solid_63;
+	    faceZone fz_solid_63;
+	    cellZoneInside inside;
+	}
+	filter_64
+	{
+	    level (2 3);
+	    cellZone cz_solid_64;
+	    faceZone fz_solid_64;
+	    cellZoneInside inside;
+	}
+	filter_65
+	{
+	    level (2 3);
+	    cellZone cz_solid_65;
+	    faceZone fz_solid_65;
+	    cellZoneInside inside;
+	}
+	filter_66
+	{
+	    level (2 3);
+	    cellZone cz_solid_66;
+	    faceZone fz_solid_66;
+	    cellZoneInside inside;
+	}
+	filter_67
+	{
+	    level (2 3);
+	    cellZone cz_solid_67;
+	    faceZone fz_solid_67;
+	    cellZoneInside inside;
+	}
+	filter_68
+	{
+	    level (2 3);
+	    cellZone cz_solid_68;
+	    faceZone fz_solid_68;
+	    cellZoneInside inside;
+	}
+	filter_69
+	{
+	    level (2 3);
+	    cellZone cz_solid_69;
+	    faceZone fz_solid_69;
+	    cellZoneInside inside;
+	}
+	filter_70
+	{
+	    level (2 3);
+	    cellZone cz_solid_70;
+	    faceZone fz_solid_70;
+	    cellZoneInside inside;
+	}
+	filter_71
+	{
+	    level (2 3);
+	    cellZone cz_solid_71;
+	    faceZone fz_solid_71;
+	    cellZoneInside inside;
+	}
+	filter_72
+	{
+	    level (2 3);
+	    cellZone cz_solid_72;
+	    faceZone fz_solid_72;
+	    cellZoneInside inside;
+	}
+	filter_73
+	{
+	    level (2 3);
+	    cellZone cz_solid_73;
+	    faceZone fz_solid_73;
+	    cellZoneInside inside;
+	}
+	filter_74
+	{
+	    level (2 3);
+	    cellZone cz_solid_74;
+	    faceZone fz_solid_74;
+	    cellZoneInside inside;
+	}
+	filter_75
+	{
+	    level (2 3);
+	    cellZone cz_solid_75;
+	    faceZone fz_solid_75;
+	    cellZoneInside inside;
+	}
+	filter_76
+	{
+	    level (2 3);
+	    cellZone cz_solid_76;
+	    faceZone fz_solid_76;
+	    cellZoneInside inside;
+	}
+	filter_77
+	{
+	    level (2 3);
+	    cellZone cz_solid_77;
+	    faceZone fz_solid_77;
+	    cellZoneInside inside;
+	}
+	filter_78
+	{
+	    level (2 3);
+	    cellZone cz_solid_78;
+	    faceZone fz_solid_78;
+	    cellZoneInside inside;
+	}
+	filter_79
+	{
+	    level (2 3);
+	    cellZone cz_solid_79;
+	    faceZone fz_solid_79;
+	    cellZoneInside inside;
+	}
+	filter_80
+	{
+	    level (2 3);
+	    cellZone cz_solid_80;
+	    faceZone fz_solid_80;
+	    cellZoneInside inside;
+	}
+	filter_81
+	{
+	    level (2 3);
+	    cellZone cz_solid_81;
+	    faceZone fz_solid_81;
+	    cellZoneInside inside;
+	}
+	filter_82
+	{
+	    level (2 3);
+	    cellZone cz_solid_82;
+	    faceZone fz_solid_82;
+	    cellZoneInside inside;
+	}
+	filter_83
+	{
+	    level (2 3);
+	    cellZone cz_solid_83;
+	    faceZone fz_solid_83;
+	    cellZoneInside inside;
+	}
+	filter_84
+	{
+	    level (2 3);
+	    cellZone cz_solid_84;
+	    faceZone fz_solid_84;
+	    cellZoneInside inside;
+	}
+	filter_85
+	{
+	    level (2 3);
+	    cellZone cz_solid_85;
+	    faceZone fz_solid_85;
+	    cellZoneInside inside;
+	}
+	filter_86
+	{
+	    level (2 3);
+	    cellZone cz_solid_86;
+	    faceZone fz_solid_86;
+	    cellZoneInside inside;
+	}
+	filter_87
+	{
+	    level (2 3);
+	    cellZone cz_solid_87;
+	    faceZone fz_solid_87;
+	    cellZoneInside inside;
+	}
+	filter_88
+	{
+	    level (2 3);
+	    cellZone cz_solid_88;
+	    faceZone fz_solid_88;
+	    cellZoneInside inside;
+	}
+	filter_89
+	{
+	    level (2 3);
+	    cellZone cz_solid_89;
+	    faceZone fz_solid_89;
+	    cellZoneInside inside;
+	}
+	filter_90
+	{
+	    level (2 3);
+	    cellZone cz_solid_90;
+	    faceZone fz_solid_90;
+	    cellZoneInside inside;
+	}
+	filter_91
+	{
+	    level (2 3);
+	    cellZone cz_solid_91;
+	    faceZone fz_solid_91;
+	    cellZoneInside inside;
+	}
+	filter_92
+	{
+	    level (2 3);
+	    cellZone cz_solid_92;
+	    faceZone fz_solid_92;
+	    cellZoneInside inside;
+	}
+	filter_93
+	{
+	    level (2 3);
+	    cellZone cz_solid_93;
+	    faceZone fz_solid_93;
+	    cellZoneInside inside;
+	}
+	filter_94
+	{
+	    level (2 3);
+	    cellZone cz_solid_94;
+	    faceZone fz_solid_94;
+	    cellZoneInside inside;
+	}
+	filter_95
+	{
+	    level (2 3);
+	    cellZone cz_solid_95;
+	    faceZone fz_solid_95;
+	    cellZoneInside inside;
+	}
+	filter_96
+	{
+	    level (2 3);
+	    cellZone cz_solid_96;
+	    faceZone fz_solid_96;
+	    cellZoneInside inside;
+	}
+	filter_97
+	{
+	    level (2 3);
+	    cellZone cz_solid_97;
+	    faceZone fz_solid_97;
+	    cellZoneInside inside;
+	}
+	filter_98
+	{
+	    level (2 3);
+	    cellZone cz_solid_98;
+	    faceZone fz_solid_98;
+	    cellZoneInside inside;
+	}
+	filter_99
+	{
+	    level (2 3);
+	    cellZone cz_solid_99;
+	    faceZone fz_solid_99;
+	    cellZoneInside inside;
+	}
+
+    }
+
+    resolveFeatureAngle 30;
+    
+
+    // Region-wise refinement
+    // ~~~~~~~~~~~~~~~~~~~~~~
+
+    // Specifies refinement level for cells in relation to a surface. One of
+    // three modes
+    // - distance. 'levels' specifies per distance to the surface the
+    //   wanted refinement level. The distances need to be specified in
+    //   descending order.
+    // - inside. 'levels' is only one entry and only the level is used. All
+    //   cells inside the surface get refined up to the level. The surface
+    //   needs to be closed for this to be possible.
+    // - outside. Same but cells outside.
+
+    refinementRegions
+    {
+        chamber
+        {
+            mode inside;
+            levels ((0 2));
+	}
+
+	filter_0
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_1
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_2
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_3
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_4
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_5
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_6
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_7
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_8
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_9
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_10
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_11
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_12
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_13
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_14
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_15
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_16
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_17
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_18
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_19
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_20
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_21
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_22
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_23
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_24
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_25
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_26
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_27
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_28
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_29
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_30
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_31
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_32
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_33
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_34
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_35
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_36
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_37
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_38
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_39
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_40
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_41
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_42
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_43
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_44
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_45
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_46
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_47
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_48
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_49
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_50
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_51
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_52
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_53
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_54
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_55
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_56
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_57
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_58
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_59
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_60
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_61
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_62
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_63
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_64
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_65
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_66
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_67
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_68
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_69
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_70
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_71
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_72
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_73
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_74
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_75
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_76
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_77
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_78
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_79
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_80
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_81
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_82
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_83
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_84
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_85
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_86
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_87
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_88
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_89
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_90
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_91
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_92
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_93
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_94
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_95
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_96
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_97
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_98
+	{
+	mode inside;
+	levels ((1 2));
+	}
+	filter_99
+	{
+	mode inside;
+	levels ((1 2));
+	}
+
+	refinementBox
+	{    
+	    mode inside;
+	    levels ((1 2));
+	}
+
+	refinementCylinder
+	{    
+	    mode inside;
+	    levels ((1 3));
+	}
+
+    }
+
+
+    // Mesh selection
+    // ~~~~~~~~~~~~~~
+
+    // After refinement patches get added for all refinementSurfaces and
+    // all cells intersecting the surfaces get put into these patches. The
+    // section reachable from the locationInMesh is kept.
+    // NOTE: This point should never be on a face, always inside a cell, even
+    // after refinement.
+    // This is an outside point locationInMesh (-0.033 -0.033 0.0033);
+    locationInMesh (0.55003 0.55003 0.55003); // Inside point
+
+    // Whether any faceZones (as specified in the refinementSurfaces)
+    // are only on the boundary of corresponding cellZones or also allow
+    // free-standing zone faces. Not used if there are no faceZones.
+    allowFreeStandingZoneFaces true;
+}
+
+
+
+// Settings for the snapping.
+snapControls
+{
+    //- Number of patch smoothing iterations before finding correspondence
+    //  to surface
+    nSmoothPatch 5;
+
+    //- Relative distance for points to be attracted by surface feature point
+    //  or edge. True distance is this factor times local
+    //  maximum edge length.
+    tolerance 1.0;
+
+    //- Number of mesh displacement relaxation iterations.
+    nSolveIter 500;
+
+    //- Maximum number of snapping relaxation iterations. Should stop
+    //  before upon reaching a correct mesh.
+    nRelaxIter 10;
+
+    // Feature snapping
+
+        //- Number of feature edge snapping iterations.
+        //  Leave out altogether to disable.
+        nFeatureSnapIter 10;
+
+        //- Detect (geometric) features by sampling the surface
+        implicitFeatureSnap true;
+
+        //- Use castellatedMeshControls::features
+        explicitFeatureSnap true;
+
+        //- Detect features between multiple surfaces
+        //  (only for explicitFeatureSnap, default = false)
+        multiRegionFeatureSnap false;
+}
+
+
+
+// Settings for the layer addition.
+addLayersControls
+{
+    // Are the thickness parameters below relative to the undistorted
+    // size of the refined cell outside layer (true) or absolute sizes (false).
+    relativeSizes true;
+
+    // Per final patch (so not geometry!) the layer information
+    layers
+    {
+        "chamber"
+        {
+            nSurfaceLayers 3;
+        }
+    }
+
+    // Expansion factor for layer mesh
+    expansionRatio 1.2;
+
+
+    // Wanted thickness of final added cell layer. If multiple layers
+    // is the thickness of the layer furthest away from the wall.
+    // Relative to undistorted size of cell outside layer.
+    // See relativeSizes parameter.
+    finalLayerThickness 0.001;
+
+    // Minimum thickness of cell layer. If for any reason layer
+    // cannot be above minThickness do not add layer.
+    // See relativeSizes parameter.
+    minThickness 0.0001;
+
+    // If points get not extruded do nGrow layers of connected faces that are
+    // also not grown. This helps convergence of the layer addition process
+    // close to features.
+    nGrow 0;
+
+
+    // Advanced settings
+
+    // When not to extrude surface. 0 is flat surface, 90 is when two faces
+    // are perpendicular
+    featureAngle 30;
+
+    // Maximum number of snapping relaxation iterations. Should stop
+    // before upon reaching a correct mesh.
+    nRelaxIter 5;
+
+    // Number of smoothing iterations of surface normals
+    nSmoothSurfaceNormals 1;
+
+    // Number of smoothing iterations of interior mesh movement direction
+    nSmoothNormals 3;
+
+    // Smooth layer thickness over surface patches
+    nSmoothThickness 10;
+
+    // Stop layer growth on highly warped cells
+    maxFaceThicknessRatio 0.5;
+
+    // Reduce layer growth where ratio thickness to medial
+    // distance is large
+    maxThicknessToMedialRatio 0.3;
+
+    // Angle used to pick up medial axis points
+    minMedianAxisAngle 90;
+
+    // Create buffer region for new layer terminations
+    nBufferCellsNoExtrude 0;
+
+
+    // Overall max number of layer addition iterations. The mesher will exit
+    // if it reaches this number of iterations; possibly with an illegal
+    // mesh.
+    nLayerIter 50;
+
+    // Max number of iterations after which relaxed meshQuality controls
+    // get used. Up to nRelaxIter it uses the settings in meshQualityControls,
+    // after nRelaxIter it uses the values in meshQualityControls::relaxed.
+    nRelaxedIter 20;
+}
+
+
+
+// Generic mesh quality settings. At any undoable phase these determine
+// where to undo.
+meshQualityControls
+{
+    #include "meshQualityDict"
+
+
+    // Advanced
+
+    //- Number of error distribution iterations
+    nSmoothScale 4;
+    //- Amount to scale back displacement at error points
+    errorReduction 0.75;
+}
+
+
+// Advanced
+
+// Write flags
+writeFlags
+(
+    scalarLevels    // write volScalarField with cellLevel for postprocessing
+    layerSets       // write cellSets, faceSets of faces in layer
+    layerFields     // write volScalarField for layer coverage
+);
+
+
+// Merge tolerance. Is fraction of overall bounding box of initial mesh.
+// Note: the write tolerance needs to be higher than this.
+mergeTolerance 1E-6;
+
+
+// ************************************************************************* //
